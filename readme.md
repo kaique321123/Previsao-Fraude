@@ -33,7 +33,7 @@ A Curva ROC (Receiver Operating Characteristic) avalia o desempenho de um classi
 
 #### <b> TPR (Taxa de Verdadeiros Positivos): </b>
 
-![TPR](Imgs\tpr.png)
+![TPR](Imgs/tpr.png)
 
 Onde:
 - TP: Verdadeiros positivos
@@ -65,34 +65,34 @@ Uma AUC = 1 tem uma classificação como perfeita e uma AUC = 0,5 indica que o m
 Métricas derivadas:
 
 1. Acurácia (Taxa de Acerto na Identificação):
-![acuracia](Imgs\acuracia.png)
+![acuracia](Imgs/acuracia.png)
 
 2. Precisão (Fraudes identificadas corretamente entre todas as previstas como fraudes):
 
-![precisao](Imgs\precisao.png)
+![precisao](Imgs/precisao.png)
 
 3. Recall (Fraudes identificadas corretamente entre todas as fraudes verdadeiras):
 
-![recall](Imgs\recall.png)
+![recall](Imgs/recall.png)
 
 4. F1-Score (Média harmônica entre precisão e recall):
 
-![f1](Imgs\f1.png)
+![f1](Imgs/f1.png)
 
 ## Visualizações
 
 ### 1. Boxplot: Fraude vs Não Fraude
-![Fraude vs Não Fraude](Gráficos\fraudevsnafraude.png)
+![Fraude vs Não Fraude](Gráficos/fraudevsnafraude.png)
 
 Boxplot que compara os valores das transações entre as classes. Transações fraudulentas tendem a ter valores distintos dos não fraudulentos, principalmente valores mais baixos para evitar suspeitas.
 
 ### 1. Curva ROC
-![Curva ROC](Gráficos\curvaROC.png)
+![Curva ROC](Gráficos/curvaROC.png)
 
  O AUC obtido foi **0.98**, indicando excelente desempenho.
 
 ### 3. Matriz de Confusão
-![Matriz de Confusão](Gráficos\matrizdeconfusão.png)
+![Matriz de Confusão](Gráficos/matrizdeconfusão.png)
 
 O modelo acertou 85286 TN e 121 TP, com poucos erros (27 FN e 9 FP).
 
