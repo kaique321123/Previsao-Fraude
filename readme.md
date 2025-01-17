@@ -41,7 +41,7 @@ Onde:
 
 #### <b>FPR (Taxa de Falsos Positivos):</b>
 
-![FPR](Imgs\fpr.png)
+![FPR](Imgs/fpr.png)
 
 Onde:
 
