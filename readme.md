@@ -65,6 +65,7 @@ Uma AUC = 1 tem uma classificação como perfeita e uma AUC = 0,5 indica que o m
 Métricas derivadas:
 
 1. Acurácia (Taxa de Acerto na Identificação):
+   
 ![acuracia](Imgs/acuracia.png)
 
 2. Precisão (Fraudes identificadas corretamente entre todas as previstas como fraudes):
