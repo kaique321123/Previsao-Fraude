@@ -82,17 +82,17 @@ Métricas derivadas:
 ## Visualizações
 
 ### 1. Boxplot: Fraude vs Não Fraude
-![Fraude vs Não Fraude](Gráficos/fraudevsnafraude.png)
+![Fraude vs Não Fraude](Graficos/fraudevsnafraude.png)
 
 Boxplot que compara os valores das transações entre as classes. Transações fraudulentas tendem a ter valores distintos dos não fraudulentos, principalmente valores mais baixos para evitar suspeitas.
 
 ### 1. Curva ROC
-![Curva ROC](Gráficos/curvaROC.png)
+![Curva ROC](Graficos/curvaROC.png)
 
  O AUC obtido foi **0.98**, indicando excelente desempenho.
 
 ### 3. Matriz de Confusão
-![Matriz de Confusão](Gráficos/matrizdeconfusão.png)
+![Matriz de Confusão](Graficos/matrizdeconfusão.png)
 
 O modelo acertou 85286 TN e 121 TP, com poucos erros (27 FN e 9 FP).
 
