@@ -3,13 +3,12 @@ Este projeto é um modelo de classificação binária desenvolvido para detectar
 
 ### Estrutura do Repositório
 - `modelo.py`: Código principal contendo o modelo de classificação.
-- `curva_ROC.png`: Gráfico da Curva ROC (Receiver Operating Characteristic).
-- `distribuicao_das_previsoes.png`: Gráfico de barras representando a distribuição das previsões do modelo.
-- `fraude_vs_nao_fraude.png`: Boxplot que compara os valores de transação entre classes fraudulentas e não fraudulentas.
-- **Espaço reservado**: Adicione o nome do arquivo do dataset aqui.
+- `Gráficos`: Apresenta os gráficos gerados para fazer análise dos dados.
+- `csv`: Pasta com o arquivo que deve ser utilizado no código 
+
 
 ## Dataset
-Insira aqui o nome do arquivo ZIP contendo o dataset e informações relevantes sobre o mesmo.
+O arquivo csv se encontra de forma compactada na pasta chamada `csv`.
 
 ## Requisitos
 - Python 3.x
@@ -21,37 +20,79 @@ Insira aqui o nome do arquivo ZIP contendo o dataset e informações relevantes 
 3. Execute o script `modelo.py`.
 
 ## Conceitos Matemáticos
+### 1. Quartis
+São os valores que dividem um conjunto de dados ordenados em blocos com 4 partes iguais, cada uma com 25% dos dados.
 
-### Curva ROC e AUC
-A Curva ROC é utilizada para avaliar o desempenho de modelos de classificação binária. Ela relaciona:
-- **Taxa de Verdadeiros Positivos (TPR)**: 
-\[ TPR = \frac{TP}{TP + FN} \]
-- **Taxa de Falsos Positivos (FPR)**: 
-\[ FPR = \frac{FP}{FP + TN} \]
+- Q1 (Primeiro Quartil): 25% dos valores estão abaixo deste ponto.
+- Q2 (Mediana): 50% dos valores estão abaixo deste ponto. Representa o valor central.
+- Q3 (Terceiro Quartil): 75% dos valores estão abaixo deste ponto.
+- Pontos fora do intervalo de [Q1−1.5×IQR,Q3+1.5×IQR] É usado para identificar outliers, qualquer valor acima dele ou abaixo é um outlier.
 
-O valor da área sob a curva (AUC - Area Under the Curve) fornece uma métrica de desempenho:
-- **AUC = 1**: Classificação perfeita.
-- **AUC = 0.5**: Modelo equivalente ao acaso.
+### 2. Curva ROC e AUC 
+A Curva ROC (Receiver Operating Characteristic) avalia o desempenho de um classificador binário, considerando:
 
-### Boxplot
-O boxplot permite visualizar a dispersão dos valores de transações entre as classes "Fraude" e "Não Fraude". Ele exibe:
-- Mediana.
-- Quartis (Q1 e Q3).
-- Outliers.
+#### <b> TPR (Taxa de Verdadeiros Positivos): </b>
+
+![TPR](Imgs\tpr.png)
+
+Onde:
+- TP: Verdadeiros positivos
+- FN: Falsos Negativos
+
+#### <b>FPR (Taxa de Falsos Positivos):</b>
+
+![FPR](Imgs\fpr.png)
+
+Onde:
+
+- FP: Falsos positivos.
+- TN: Verdadeiros negativos.
+
+Uma AUC = 1 tem uma classificação como perfeita e uma AUC = 0,5 indica que o modelo não tem capacidade preditiva.
+
+### 3. Matriz de Confusão
+
+- Linhas: Classe Verdadeira
+- Colunas: Classe Prevista
+
+#### Componentes:
+
+- <b>Verdadeiros Positivos (TP):</b> Fraudes corretamente identificadas como fraudes.
+- <b>Verdadeiros Negativos (TN):</b> Não fraudes corretamente identificadas como não fraudes.
+- <b>Falsos Positivos (FP):</b> Não fraudes incorretamente identificadas como fraudes.
+- <b>Falsos Negativos (FN):</b> Fraudes incorretamente identificadas como não fraudes.
+
+Métricas derivadas:
+
+1. Acurácia (Taxa de Acerto na Identificação):
+![acuracia](Imgs\acuracia.png)
+
+2. Precisão (Fraudes identificadas corretamente entre todas as previstas como fraudes):
+
+![precisao](Imgs\precisao.png)
+
+3. Recall (Fraudes identificadas corretamente entre todas as fraudes verdadeiras):
+
+![recall](Imgs\recall.png)
+
+4. F1-Score (Média harmônica entre precisão e recall):
+
+![f1](Imgs\f1.png)
 
 ## Visualizações
 
+### 1. Boxplot: Fraude vs Não Fraude
+![Fraude vs Não Fraude](Gráficos\fraudevsnafraude.png)
+
+Boxplot que compara os valores das transações entre as classes. Transações fraudulentas tendem a ter valores distintos dos não fraudulentos, principalmente valores mais baixos para evitar suspeitas.
+
 ### 1. Curva ROC
-![Curva ROC](curva_ROC.png)
+![Curva ROC](Gráficos\curvaROC.png)
 
-Representa o equilíbrio entre a taxa de verdadeiros positivos e a taxa de falsos positivos. O AUC obtido foi **0.98**, indicando excelente desempenho.
+ O AUC obtido foi **0.98**, indicando excelente desempenho.
 
-### 2. Distribuição das Previsões
-![Distribuição das Previsões](distribuicao_das_previsoes.png)
+### 3. Matriz de Confusão
+![Matriz de Confusão](Gráficos\matrizdeconfusão.png)
 
-Gráfico de barras mostrando a quantidade de transações classificadas como "Fraude" e "Não Fraude". Observa-se um desbalanceamento entre as classes.
+O modelo acertou 85286 TN e 121 TP, com poucos erros (27 FN e 9 FP).
 
-### 3. Boxplot: Fraude vs Não Fraude
-![Fraude vs Não Fraude](fraude_vs_nao_fraude.png)
-
-Boxplot que compara os valores das transações entre as classes. Transações fraudulentas tendem a ter valores distintos dos não fraudulentos.
